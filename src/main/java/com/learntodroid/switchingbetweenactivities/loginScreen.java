@@ -10,6 +10,7 @@ import android.widget.*;
 import java.util.*;
 
 public class loginScreen extends AppCompatActivity {
+    private static final int REGISTRATION_REQUEST_CODE = 0;
     Button submitButton;
     Button registerButton;
     EditText usernameInput;
@@ -33,7 +34,6 @@ public class loginScreen extends AppCompatActivity {
             public void onClick(View view) {
                 if(accountExists(usernameInput.getText().toString(), passwordInput.getText().toString())){
                     switchActivitiesWithData();
-                    //switchActivities();
                 }
             }
         });
@@ -42,10 +42,8 @@ public class loginScreen extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //switchActivities();
-                switchActivitiesWithData();
+                toRegistration();
             }
-
         });
 
     }
@@ -69,6 +67,27 @@ public class loginScreen extends AppCompatActivity {
         Intent switchActivityIntent = new Intent(this, SecondActivity.class);
         switchActivityIntent.putExtra("message", "From: " + loginScreen.class.getSimpleName());
         startActivity(switchActivityIntent);
+    }
+//
+    private void toRegistration() {
+        Intent intent = new Intent(this, Registration.class);
+        startActivityForResult(intent, REGISTRATION_REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // check that it is the SecondActivity with an OK result
+        if (requestCode == REGISTRATION_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                // get String data from Intent
+                String registrationUsername = data.getStringExtra("Username");
+                String registrationPassword = data.getStringExtra("Password");
+                String registrationZIP = data.getStringExtra("ZIP");
+                accounts.add(new Account(registrationUsername, registrationPassword, Integer.parseInt(registrationZIP)));
+            }
+        }
     }
 }
 
