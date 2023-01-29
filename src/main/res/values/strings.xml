@@ -1,3 +1,48 @@
 <resources>
     <string name="app_name">Switching Between Activities</string>
+    <string-array name="Ages">
+        <item>13-17</item>
+        <item>18-25</item>
+        <item>26-40</item>
+        <item>41-65</item>
+        <item>65+</item>
+    </string-array>
+
+    <string-array name="Stress">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="Activities">
+        <item>Running</item>
+        <item>Walking</item>
+        <item>Basketball</item>
+        <item>Soccer</item>
+        <item>Baseball</item>
+        <item>Swimming</item>
+        <item>Tennis</item>
+        <item>Pickle-ball</item>
+        <item>Hiking</item>
+        <item>Cricket</item>
+        <item>Volleyball</item>
+        <item>Gold</item>
+        <item>Rugby</item>
+        <item>Hockey</item>
+        <item>Football</item>
+        <item>Gymnastics</item>
+        <item>Martial Arts</item>
+        <item>Table Tennis</item>
+        <item>Tai Chi</item>
+        <item>Yoga</item>
+        <item>N/A</item>
+    </string-array>
 </resources>
+

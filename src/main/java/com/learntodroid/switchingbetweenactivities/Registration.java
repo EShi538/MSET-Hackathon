@@ -11,7 +11,6 @@ import java.util.*;
 
 public class Registration extends AppCompatActivity {
     Button backButton;
-
     Button signUpButton;
     EditText usernameInput;
     EditText passwordInput;
@@ -37,24 +36,31 @@ public class Registration extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                backToLoginSignedUp();
+                next();
             }
         });
     }
 
     private void backToLogin() {
         Intent switchActivityIntent = new Intent(this, loginScreen.class);
-        switchActivityIntent.putExtra("message", "From: " + Registration.class.getSimpleName());
         startActivity(switchActivityIntent);
     }
 
-    private void backToLoginSignedUp(){
-        Intent registrationIntent = new Intent(this, loginScreen.class);
-        registrationIntent.putExtra("Username", usernameInput.getText().toString());
-        registrationIntent.putExtra("Password", passwordInput.getText().toString());
-        registrationIntent.putExtra("ZIP", zipInput.getText().toString());
+//    private void next(){
+//        Intent registrationIntent = new Intent(this, getInfo.class);
+//        registrationIntent.putExtra("Username", usernameInput.getText().toString());
+//        registrationIntent.putExtra("Password", passwordInput.getText().toString());
+//        registrationIntent.putExtra("ZIP", zipInput.getText().toString());
+//        setResult(RESULT_OK, registrationIntent);
+//        finish();
+//    }
 
-        setResult(RESULT_OK, registrationIntent);
-        finish();
+    private void next(){
+        // start the SecondActivity
+        Intent intent = new Intent(this, getInfo.class);
+        intent.putExtra("Username", usernameInput.getText().toString());
+        intent.putExtra("Password", passwordInput.getText().toString());
+        intent.putExtra("ZIP", zipInput.getText().toString());
+        startActivity(intent);
     }
 }
