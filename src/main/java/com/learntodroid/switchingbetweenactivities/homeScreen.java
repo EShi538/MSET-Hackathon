@@ -7,13 +7,18 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class homeScreen extends AppCompatActivity {
-    Button backButton;
-    TextView result;
+    Button statsButton;
+
+    Button leaderboardButton;
+
+    Button profileButton;
+
+    Button Activities;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_screen);
+        setContentView(R.layout.homescreen);
 
     }
 

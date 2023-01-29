@@ -60,14 +60,19 @@ public class loginScreen extends AppCompatActivity {
                 if(!file.getPath().contains("MSET19286")){
                     continue;
                 }
-                String pathname = file.getPath();
-                int index = pathname.indexOf("MSET19286") + 9;
-                String accountDetails = pathname.substring(index);
-                String[] details = accountDetails.split("-");
-                String username1 = details[0];
-                String password1 = details[1];
-                if(username1.equals(username) && password1.equals(password)){
-                    return true;
+                try {
+                    String pathname = file.getPath();
+                    int index = pathname.indexOf("MSET19286") + 9;
+                    String accountDetails = pathname.substring(index);
+                    String[] details = accountDetails.split("-");
+                    String username1 = details[0];
+                    String password1 = details[1];
+                    if (username1.equals(username) && password1.equals(password)) {
+                        return true;
+                    }
+                }
+                catch(Exception e){
+                    continue;
                 }
             }
         }
