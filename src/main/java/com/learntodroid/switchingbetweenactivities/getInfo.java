@@ -62,9 +62,9 @@ public class getInfo extends AppCompatActivity {
 
     private void createFile(){
         try {
-            File root = new File("/storage/emulated/0/Download/MSET19286" + username + ".txt");
+            File root = new File("/storage/emulated/0/Download/MSET19286" + username + "-" + password + "-" + ZIP + "-" + age + "-" + stress + "-" + physicality + ".txt");
             boolean result = root.createNewFile();
-            FileWriter writer = new FileWriter("/storage/emulated/0/Download/MSET19286" + username + ".txt");
+            FileWriter writer = new FileWriter("/storage/emulated/0/Download/MSET19286" + username + "-" + password + "-" + ZIP + "-" + age + "-" + stress + "-" + physicality + ".txt");
             writer.write(username + "\n");
             writer.write(password + "\n");
             writer.write(ZIP + "\n");

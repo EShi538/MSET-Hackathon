@@ -53,14 +53,20 @@ public class loginScreen extends AppCompatActivity {
     }
 
     private boolean accountExists(String username, String password) throws FileNotFoundException {
-        File dir = new File("/Users/eric/Downloads/SwitchingBetweenActivities-master 2/app/src/main/res/userstorage");
+        File dir = new File("/storage/emulated/0/Download/");
         File[] directoryListing = dir.listFiles();
         if(directoryListing != null){
             for(File file: directoryListing){
-                Scanner reader = new Scanner(file);
-                String username1 = reader.nextLine();
-                String password1 = reader.nextLine();
-                if(username.equals(username1) && password1.equals(password)){
+                if(!file.getPath().contains("MSET19286")){
+                    continue;
+                }
+                String pathname = file.getPath();
+                int index = pathname.indexOf("MSET19286") + 9;
+                String accountDetails = pathname.substring(index);
+                String[] details = accountDetails.split("-");
+                String username1 = details[0];
+                String password1 = details[1];
+                if(username1.equals(username) && password1.equals(password)){
                     return true;
                 }
             }
