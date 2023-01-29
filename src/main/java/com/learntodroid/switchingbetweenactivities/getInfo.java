@@ -47,7 +47,7 @@ public class getInfo extends AppCompatActivity {
         physicalDropdown = findViewById(R.id.physicalSpinner);
         ArrayAdapter<CharSequence>adapter2=ArrayAdapter.createFromResource(this, R.array.Activities, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        stressDropdown.setAdapter(adapter1);
+        physicalDropdown.setAdapter(adapter2);
         physicality = stressDropdown.getSelectedItem().toString();
 
         submitButton = findViewById(R.id.submitButton);
@@ -62,9 +62,9 @@ public class getInfo extends AppCompatActivity {
 
     private void createFile(){
         try {
-            File root = new File("/Users/eric/Downloads/SwitchingBetweenActivities-master 2/app/src/main/res/userstorage/" + username + ".txt");
+            File root = new File("/storage/emulated/0/Download/MSET19286" + username + ".txt");
             boolean result = root.createNewFile();
-            FileWriter writer = new FileWriter("/Users/eric/Downloads/SwitchingBetweenActivities-master 2/app/src/main/res/userstorage/" + username + ".txt");
+            FileWriter writer = new FileWriter("/storage/emulated/0/Download/MSET19286" + username + ".txt");
             writer.write(username + "\n");
             writer.write(password + "\n");
             writer.write(ZIP + "\n");
