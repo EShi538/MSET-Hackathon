@@ -1,6 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/activities">
+
+    <Button
+        android:id="@+id/profileButton"
+        android:layout_width="101dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#62B8B2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/leaderboardButton"
+        android:layout_width="101dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#62B8B2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/activitiesButton"
+        android:layout_width="101dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#62B8B2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/statsButton"
+        android:layout_width="101dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#62B8B2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="How stressed are you today? (1 being not stressed at all, 10 being extremely stressed)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        tools:layout_editor_absoluteX="394dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:text="How are your feelings of social connection and belonging today? (1 being terrible, 10 being great)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="107dp" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="362dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="676dp"
+        android:text="To generate a list of recommended activities, fill in the questionare below"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="632dp"
+        android:text="How well, physically, do you feel today?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/stressSpinner"
+        android:layout_width="166dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="564dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/socialSpinner"
+        android:layout_width="166dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="516dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="536dp"
+        android:text="How are you feelings of social belonging?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/excersizeSpinner"
+        android:layout_width="166dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="612dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="584dp"
+        android:text="How stressed are you feeling today?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginBottom="416dp"
+        android:text="Most Recent"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/recentActivity"
+        android:layout_width="373dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="376dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/activityFinish"
+        android:layout_width="60dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="324dp"
+        android:layout_marginBottom="376dp"
+        android:backgroundTint="#62B8B2"
+        android:text="Done"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/activity2"
+        android:layout_width="373dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="196dp"
+        android:backgroundTint="#62B8B2"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/activity3"
+        android:layout_width="373dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="144dp"
+        android:backgroundTint="#62B8B2"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/activity1"
+        android:layout_width="373dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="248dp"
+        android:backgroundTint="#62B8B2"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="308dp"
+        android:text="Recommended Activities"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,388 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/leaderboard">
+
+    <Button
+        android:id="@+id/profileButton"
+        android:layout_width="101dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#62B8B2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/leaderboardButton"
+        android:layout_width="101dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#62B8B2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/activitiesButton"
+        android:layout_width="101dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#62B8B2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/statsButton"
+        android:layout_width="101dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#62B8B2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/firstUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="46dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <TextView
+        android:id="@+id/secondUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/firstUser"
+        app:layout_constraintTop_toBottomOf="@+id/firstUser" />
+
+    <TextView
+        android:id="@+id/thirdUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/secondUser"
+        app:layout_constraintTop_toBottomOf="@+id/secondUser" />
+
+    <TextView
+        android:id="@+id/seventhUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/sixthUser"
+        app:layout_constraintTop_toBottomOf="@+id/sixthUser" />
+
+    <TextView
+        android:id="@+id/ninthUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/eighthUser"
+        app:layout_constraintTop_toBottomOf="@+id/eighthUser" />
+
+    <TextView
+        android:id="@+id/fourthUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="15dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/thirdUser"
+        app:layout_constraintTop_toBottomOf="@+id/thirdUser" />
+
+    <TextView
+        android:id="@+id/fifthUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/fourthUser"
+        app:layout_constraintTop_toBottomOf="@+id/fourthUser" />
+
+    <TextView
+        android:id="@+id/sixthUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/fifthUser"
+        app:layout_constraintTop_toBottomOf="@+id/fifthUser" />
+
+    <TextView
+        android:id="@+id/eighthUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/seventhUser"
+        app:layout_constraintTop_toBottomOf="@+id/seventhUser" />
+
+    <TextView
+        android:id="@+id/tenthUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/ninthUser"
+        app:layout_constraintTop_toBottomOf="@+id/ninthUser" />
+
+    <TextView
+        android:id="@+id/firstScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="53dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <TextView
+        android:id="@+id/eighthScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="18dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/seventhScore"
+        app:layout_constraintTop_toBottomOf="@+id/seventhScore" />
+
+    <TextView
+        android:id="@+id/ninthScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/eighthScore"
+        app:layout_constraintTop_toBottomOf="@+id/eighthScore" />
+
+    <TextView
+        android:id="@+id/fourthScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/thirdScore"
+        app:layout_constraintTop_toBottomOf="@+id/thirdScore" />
+
+    <TextView
+        android:id="@+id/thirdScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/secondScore"
+        app:layout_constraintTop_toBottomOf="@+id/secondScore" />
+
+    <TextView
+        android:id="@+id/sixthScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/fifthScore"
+        app:layout_constraintTop_toBottomOf="@+id/fifthScore" />
+
+    <TextView
+        android:id="@+id/fifthScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="1dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/fourthScore"
+        app:layout_constraintTop_toBottomOf="@+id/fourthScore" />
+
+    <TextView
+        android:id="@+id/seventhScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/sixthScore"
+        app:layout_constraintTop_toBottomOf="@+id/sixthScore" />
+
+    <TextView
+        android:id="@+id/tenthScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/ninthScore"
+        app:layout_constraintTop_toBottomOf="@+id/ninthScore" />
+
+    <TextView
+        android:id="@+id/secondScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/firstScore"
+        app:layout_constraintTop_toBottomOf="@+id/firstScore" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="63dp"
+        android:text="LEADERBOARD"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userRank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="540dp"
+        android:text="Rank"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        tools:layout_editor_absoluteX="179dp"
+        tools:layout_editor_absoluteY="544dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="552dp" />
+
+    <TextView
+        android:id="@+id/currentUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="540dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/currentScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="328dp"
+        android:layout_marginTop="540dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:text="1"
+        app:layout_constraintBaseline_toBaselineOf="@+id/firstUser"
+        app:layout_constraintEnd_toStartOf="@+id/firstUser" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:text="2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/secondUser"
+        app:layout_constraintEnd_toStartOf="@+id/secondUser" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:text="3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/thirdUser"
+        app:layout_constraintEnd_toStartOf="@+id/thirdUser" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="4"
+        app:layout_constraintBaseline_toBaselineOf="@+id/fourthUser"
+        app:layout_constraintEnd_toStartOf="@+id/fourthUser" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="5"
+        app:layout_constraintBaseline_toBaselineOf="@+id/fifthUser"
+        app:layout_constraintEnd_toStartOf="@+id/fifthUser" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="9dp"
+        android:text="6"
+        app:layout_constraintBaseline_toBaselineOf="@+id/sixthUser"
+        app:layout_constraintEnd_toStartOf="@+id/sixthUser" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="9dp"
+        android:text="7"
+        app:layout_constraintBaseline_toBaselineOf="@+id/seventhUser"
+        app:layout_constraintEnd_toStartOf="@+id/seventhUser" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="9dp"
+        android:text="8"
+        app:layout_constraintBaseline_toBaselineOf="@+id/eighthUser"
+        app:layout_constraintEnd_toStartOf="@+id/eighthUser" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="9dp"
+        android:text="9"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ninthUser"
+        app:layout_constraintEnd_toStartOf="@+id/ninthUser" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tenthUser"
+        app:layout_constraintEnd_toStartOf="@+id/textView18"
+        app:layout_constraintStart_toStartOf="@+id/textView18" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
