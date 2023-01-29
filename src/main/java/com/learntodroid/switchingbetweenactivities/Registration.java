@@ -73,10 +73,8 @@ public class Registration extends AppCompatActivity {
 
         }
 
-
         usernameInput = (EditText) findViewById(R.id.username);
         passwordInput = (EditText) findViewById(R.id.password);
-        //zipInput = (EditText) findViewById(R.id.zip);
 
         backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -99,15 +97,6 @@ public class Registration extends AppCompatActivity {
         Intent switchActivityIntent = new Intent(this, loginScreen.class);
         startActivity(switchActivityIntent);
     }
-
-//    private void next(){
-//        Intent registrationIntent = new Intent(this, getInfo.class);
-//        registrationIntent.putExtra("Username", usernameInput.getText().toString());
-//        registrationIntent.putExtra("Password", passwordInput.getText().toString());
-//        registrationIntent.putExtra("ZIP", zipInput.getText().toString());
-//        setResult(RESULT_OK, registrationIntent);
-//        finish();
-//    }
 
     private void next(){
         // start the SecondActivity

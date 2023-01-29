@@ -20,7 +20,6 @@ public class getInfo extends AppCompatActivity {
     String stress;
     String physicality;
     Button submitButton;
-    private static final int REGISTRATION_REQUEST_CODE = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +47,7 @@ public class getInfo extends AppCompatActivity {
         ArrayAdapter<CharSequence>adapter2=ArrayAdapter.createFromResource(this, R.array.Activities, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_item);
         physicalDropdown.setAdapter(adapter2);
-        physicality = stressDropdown.getSelectedItem().toString();
+        physicality = physicalDropdown.getSelectedItem().toString();
 
         submitButton = findViewById(R.id.submitButton);
         submitButton.setOnClickListener(new View.OnClickListener() {
@@ -62,15 +61,8 @@ public class getInfo extends AppCompatActivity {
 
     private void createFile(){
         try {
-            File root = new File("/storage/emulated/0/Download/MSET19286" + username + "-" + password + "-" + ZIP + "-" + age + "-" + stress + "-" + physicality + ".txt");
+            File root = new File("/storage/emulated/0/Download/MSET19286" + username + "---" + password + "---" + ZIP + "---" + age + "---" + stress + "---" + physicality + "---.txt");
             boolean result = root.createNewFile();
-            FileWriter writer = new FileWriter("/storage/emulated/0/Download/MSET19286" + username + "-" + password + "-" + ZIP + "-" + age + "-" + stress + "-" + physicality + ".txt");
-            writer.write(username + "\n");
-            writer.write(password + "\n");
-            writer.write(ZIP + "\n");
-            writer.write(age + "\n");
-            writer.write(stress + "\n");
-            writer.write(physicality + "\n");
         }
         catch(IOException e) {
             e.printStackTrace();    //prints exception if any
