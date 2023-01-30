@@ -16,7 +16,7 @@
         <activity android:name="com.learntodroid.Fusion_fitness.Registration"></activity>
         <activity android:name="com.learntodroid.Fusion_fitness.getInfo"></activity>
         <activity android:name="com.learntodroid.Fusion_fitness.Profile"></activity>
-        <activity android:name="com.learntodroid.Fusion_fitness.Stats"></activity>
+        <activity android:name="com.learntodroid.Fusion_fitness.Community"></activity>
         <activity android:name="com.learntodroid.Fusion_fitness.Leaderboard"></activity>
         <activity android:name="com.learntodroid.Fusion_fitness.loginScreen">
             <intent-filter>

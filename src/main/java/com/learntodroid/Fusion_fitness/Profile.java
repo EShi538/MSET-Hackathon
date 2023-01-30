@@ -12,7 +12,6 @@ public class Profile extends AppCompatActivity {
     Button statsButton;
 
     Button leaderboardButton;
-
     String recentActivity;
     Button activitiesButton;
     TextView activity;
@@ -82,6 +81,7 @@ public class Profile extends AppCompatActivity {
                 toActivities();
             }
         });
+
     }
 
     private void toLeaderboard(){
@@ -98,7 +98,7 @@ public class Profile extends AppCompatActivity {
     }
 
     private void toStats(){
-        Intent intent = new Intent(this, Stats.class);
+        Intent intent = new Intent(this, Community.class);
         intent.putExtra("username", username1);
         intent.putExtra("password", password1);
         intent.putExtra("ZIP", ZIP1);

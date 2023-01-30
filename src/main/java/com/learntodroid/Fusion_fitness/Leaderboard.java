@@ -179,7 +179,7 @@ public class Leaderboard extends AppCompatActivity {
     }
 
     private void toStats(){
-        Intent intent = new Intent(this, Stats.class);
+        Intent intent = new Intent(this, Community.class);
         intent.putExtra("username", username);
         intent.putExtra("password", password);
         intent.putExtra("ZIP", ZIP);

@@ -11,18 +11,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import org.apache.commons.math3.linear.RealMatrix;
-import org.apache.commons.math3.linear.Array2DRowRealMatrix;
-import org.apache.commons.math3.linear.LUDecomposition;
-import org.apache.commons.math3.linear.RealVector;
-import org.apache.commons.math3.linear.ArrayRealVector;
-import org.apache.commons.math3.stat.regression.OLSMultipleLinearRegression;
-
-import java.util.Arrays;
 
 
 import java.io.File;
-import java.util.ArrayList;
 
 public class Activities extends AppCompatActivity {
     Button statsButton;
@@ -30,7 +21,7 @@ public class Activities extends AppCompatActivity {
     Button finishButton;
     Button profileButton;
     String username;
-
+    Button updateButton;
     Activity recAc1, recAc2, recAc3;
     Button activity1, activity2, activity3;
     String password;
@@ -80,8 +71,6 @@ public class Activities extends AppCompatActivity {
         stressSpinner.setAdapter(adapter2);
         int stressQuotient = Integer.parseInt(excersizeSpinner.getSelectedItem().toString());
 
-        stressSpinner = findViewById(R.id.stressSpinner);
-
         profileButton = findViewById(R.id.profileButton);
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,17 +87,6 @@ public class Activities extends AppCompatActivity {
             }
         });
 
-        finishButton = findViewById(R.id.activityFinish);
-        finishButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                points += 10;
-                File file = new File(getFile());
-                File newFile = new File(newPathname(file.getPath()));
-                boolean result = file.renameTo(newFile);
-            }
-        });
-
         recentText = findViewById(R.id.recentActivity);
         recentText.setText(recentActivity);
 
@@ -116,7 +94,70 @@ public class Activities extends AppCompatActivity {
         activity1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                points += recAc1.points;
+                File file = new File(getFile());
+                File newFile = new File(newPathname(file.getPath()));
+                boolean result = file.renameTo(newFile);
+
+                String oldActivity = recentActivity;
+                recentActivity = activity1.getText().toString();
+                file = new File(getFile());
+                newFile = new File(updateActivity(file.getPath(), oldActivity));
+                result = file.renameTo(newFile);
+
                 activity1.setVisibility(view.GONE);
+            }
+        });
+
+        activity2 = findViewById(R.id.activity2);
+        activity2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                points += recAc2.points;
+                File file = new File(getFile());
+                File newFile = new File(newPathname(file.getPath()));
+                boolean result = file.renameTo(newFile);
+
+                String oldActivity = recentActivity;
+                recentActivity = activity2.getText().toString();
+                file = new File(getFile());
+                newFile = new File(updateActivity(file.getPath(), oldActivity));
+                result = file.renameTo(newFile);
+                activity2.setVisibility(view.GONE);
+            }
+        });
+
+        activity3 = findViewById(R.id.activity3);
+        activity3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                points += recAc3.points;
+                File file = new File(getFile());
+                File newFile = new File(newPathname(file.getPath()));
+                boolean result = file.renameTo(newFile);
+
+                String oldActivity = recentActivity;
+                recentActivity = activity3.getText().toString();
+                file = new File(getFile());
+                newFile = new File(updateActivity(file.getPath(), oldActivity));
+                result = file.renameTo(newFile);
+                activity3.setVisibility(view.GONE);
+            }
+        });
+
+        recommendActivities(physicalQuotient, stressQuotient, 10 - socialQuotient);
+        activity1.setText(recAc1.name + " for " + recAc1.duration + " minutes (" + recAc1.points + "SP)");
+        activity2.setText(recAc2.name + " for " + recAc2.duration + " minutes (" + recAc2.points + "SP)");
+        activity3.setText(recAc3.name + " for " + recAc3.duration + " minutes (" + recAc3.points + "SP)");
+
+        updateButton = findViewById(R.id.updateButton);
+        updateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recommendActivities(physicalQuotient, stressQuotient, 10 - socialQuotient);
+                activity1.setText(recAc1.name + " for " + recAc1.duration + " minutes (" + recAc1.points + "SP)");
+                activity2.setText(recAc2.name + " for " + recAc2.duration + " minutes (" + recAc2.points + "SP)");
+                activity3.setText(recAc3.name + " for " + recAc3.duration + " minutes (" + recAc3.points + "SP)");
             }
         });
 
@@ -157,7 +198,7 @@ public class Activities extends AppCompatActivity {
     }
 
     private void toStats(){
-        Intent intent = new Intent(this, Stats.class);
+        Intent intent = new Intent(this, Community.class);
         intent.putExtra("username", username);
         intent.putExtra("password", password);
         intent.putExtra("ZIP", ZIP);
@@ -178,34 +219,56 @@ public class Activities extends AppCompatActivity {
         activities.add(new Activity("Aerobic Exercise", 0, 1000, 30));
 
         //mental
-        activities.add(new Activity("Meditate", 1, 100, 5));
-        activities.add(new Activity("Meditate", 1, 200, 10));
-        activities.add(new Activity("Meditate", 1, 300, 15));
-        activities.add(new Activity("Yoga", 1, 600, 15));
-        activities.add(new Activity("Yoga", 1, 800, 30));
+        activities.add(new Activity("Meditate", 1, 100, 5)); //5
+        activities.add(new Activity("Meditate", 1, 200, 10));  //6
+        activities.add(new Activity("Meditate", 1, 300, 15)); //7
+        activities.add(new Activity("Yoga", 1, 600, 15)); //8
+        activities.add(new Activity("Yoga", 1, 800, 30)); //9
     }
 
     private void recommendActivities(int physical, int mental, int social){
         //physical
         if(physical < 2){
-            recAc1 = new Activity("None for today!", 0, 0, 0);
+            recAc1 = new Activity("None for today", 0, 0, 0);
         }
-        if (physical < 3){
+        else if (physical > 2 && physical <= 4){
             recAc1 = activities.get(0);
         }
-        else if (physical < 5){
+        else if (physical > 4 && physical <= 6){
             recAc1 = activities.get((int) Math.floor(Math.random() * 2));
         }
-        else if (physical < 7){
+        else if (physical > 6 && physical <= 8){
             recAc1 = activities.get((int) Math.floor(Math.random() * 3));
         }
-        else if (physical < 9){
+        else if (physical == 9){
             recAc1 = activities.get((int) Math.floor(Math.random() * (4 - 2) + 2));
         }
         else{
             recAc1 = activities.get((int) Math.floor(Math.random() * (5 - 3) + 3));
         }
 
+        //mental
+        int mentalQuotient = mental + social;
+        if(mentalQuotient <= 2){
+            recAc2 = new Activity("Take a breather", 0, 0, 0);
+        }
+        else if (mentalQuotient > 2 && mentalQuotient <= 6){
+            recAc2 = activities.get(5);
+        }
+        else if (mentalQuotient > 6 && mentalQuotient <= 10){
+            recAc2 = activities.get(6);
+        }
+        else if (mentalQuotient > 10 && mentalQuotient <= 14){
+            recAc2 = activities.get((int) Math.floor(Math.random() * (8 - 5) + 5));
+        }
+        else if (mentalQuotient > 14 && mentalQuotient <= 18){
+            recAc2 = activities.get((int) Math.floor(Math.random() * (9 - 5) + 5));
+        }
+        else{
+            recAc2 = activities.get((int) Math.floor(Math.random() * (10 - 6) + 6));
+        }
+
+        recAc3 = activities.get((int) Math.floor(Math.random() * 10));
     }
     private String getFile() {
         File dir = new File("/storage/emulated/0/Download/");
@@ -244,6 +307,11 @@ public class Activities extends AppCompatActivity {
         }
         pathname = pathname.substring(0, index + 1);
         return pathname + points + "---" + recentActivity + "---.txt";
+    }
+
+    private String updateActivity(String pathname, String oldActivity){
+        pathname = pathname.substring(0, pathname.length() - oldActivity.length() - 7);
+        return pathname + recentActivity + "---.txt";
     }
 }
 

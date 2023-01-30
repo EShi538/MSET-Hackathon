@@ -13,6 +13,8 @@
         android:layout_marginStart="300dp"
         android:layout_marginBottom="4dp"
         android:backgroundTint="#62B8B2"
+        android:text="Profile"
+        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -23,6 +25,8 @@
         android:layout_marginStart="12dp"
         android:layout_marginBottom="4dp"
         android:backgroundTint="#62B8B2"
+        android:text="Leaderboard"
+        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -33,6 +37,8 @@
         android:layout_marginStart="108dp"
         android:layout_marginBottom="4dp"
         android:backgroundTint="#62B8B2"
+        android:text="Activities"
+        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -43,6 +49,8 @@
         android:layout_marginStart="204dp"
         android:layout_marginBottom="4dp"
         android:backgroundTint="#62B8B2"
+        android:text="Community"
+        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
